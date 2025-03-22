@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Providers } from "../redux/provider/Providers";
+import { ThemeProvider } from "next-themes";
+import { ThemeInitScript } from "../utils/theme-script";
 
 export const metadata: Metadata = {
   title: "Vacancy Dashboard",
@@ -13,12 +15,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <Providers>
-        <body>
-          {children}
-        </body>
-      </Providers>
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <ThemeInitScript />
+      </head>
+      <body>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <Providers>
+              {children}
+          </Providers>
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
