@@ -10,7 +10,7 @@ const Home = () => {
   const router = useRouter();
 
   return (
-    <div className="relative h-screen w-full overflow-hidden">
+    <div className="relative h-screen w-full overflow-hidden bg-[image:var(--color-background-grad)]">
    
       <Image
         src="/bgVetorizado.png"
