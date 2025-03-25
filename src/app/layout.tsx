@@ -3,6 +3,7 @@ import "./globals.css";
 import { Providers } from "../redux/provider/Providers";
 import { ThemeProvider } from "next-themes";
 import { ThemeInitScript } from "../utils/theme-script";
+import { ThemeToggle } from "@/components/customComponents/themeToggle/ThemeToggle";
 
 export const metadata: Metadata = {
   title: "Vacancy Dashboard",
@@ -22,7 +23,8 @@ export default function RootLayout({
       <body>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Providers>
-              {children}
+            <ThemeToggle />
+            {children}
           </Providers>
         </ThemeProvider>
       </body>

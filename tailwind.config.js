@@ -22,8 +22,11 @@ module.exports = {
         // Continue com outras cores personalizadas conforme necessário
       },
       backgroundImage: {
-        grad: 'image:var(--color-background-grad)', // ⬅️ aqui você cria bg-grad
+        grad: 'image:var(--color-background-grad)',
       },
+      boxShadow: {
+        glow: 'var(--shadow)',
+      }
     },
   },
   plugins: [require("tailwindcss-animate")],

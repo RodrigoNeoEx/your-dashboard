@@ -1,3 +1,5 @@
+"use client"
+
 import { Label } from "@/components/ui/label"
 import { Switch } from "@/components/ui/switch"
 import { useTheme } from "next-themes";
@@ -14,7 +16,7 @@ export function ThemeToggle() {
   const isDark = resolvedTheme === "dark";
 
   return (
-    <div className="absolute top-4 right-4 flex">
+    <div className="absolute top-4 right-4 flex z-10">
       <Switch
         id="theme-mode"
         checked={isDark}
