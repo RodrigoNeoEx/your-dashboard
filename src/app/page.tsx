@@ -25,6 +25,10 @@ const Home = () => {
           <h1 className="text-4xl font-bold text-center text-black">
             Welcome to Your Dashboard Creator
           </h1>
+          <span>
+          Build, customize, and organize your dashboards and KPIs however you want. Choose layouts, define metrics, and create different views for each objective — all in one place.
+          </span>
+
           <p className="text-lg text-center text-black">
             Signin or Register to Start to Use.
           </p>
