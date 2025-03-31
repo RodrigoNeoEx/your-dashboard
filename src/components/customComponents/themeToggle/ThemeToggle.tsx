@@ -16,12 +16,12 @@ export function ThemeToggle() {
   const isDark = resolvedTheme === "dark";
 
   return (
-    <div className="absolute top-4 right-4 flex z-10">
+    <div className="absolute top-4 right-4 flex z-10 t">
       <Switch
         id="theme-mode"
         checked={isDark}
         onCheckedChange={() => setTheme(isDark ? "light" : "dark")}
-        className="w-[3.9rem] h-[2rem] [&>span]:w-[1.9rem] [&>span]:h-[1.9rem]"
+        className="w-[3.9rem] h-[2rem] [&>span]:w-[1.9rem] [&>span]:h-[1.9rem] bg-primary"
       />
       <Label htmlFor="theme-mode" className="pl-2">{isDark ? "Modo Claro" : "Modo Escuro"}</Label>
     </div>
