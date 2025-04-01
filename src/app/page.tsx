@@ -4,6 +4,7 @@ import Image from "next/image";
 import GlassCard from "@/components/cards/GlassCard";
 import ContainerPage from "@/components/containers/ContainerPage";
 import LoginButtons from "@/components/buttons/loginButtons";
+import DefaultModal from "@/components/modals/DefaultModal";
 
 
 
@@ -29,14 +30,15 @@ const Home = () => {
         contentClass="font-bold"
         footerClass="font-weight-500 text-primary"           
       >
-        <LoginButtons
-          btn1="Login"
-          btn2="Register"
-          fn1={() => console.log('teste')}
-          fn2={() => console.log('teste')} 
-          btn1Class="min-w-[8rem] bg-[#184e7e] dark:text-white" 
-          btn2Class="min-w-[8rem] bg-[#184e7e] dark:text-white" 
-        />
+          <LoginButtons
+            btn1="Login"
+            btn2="Register"
+            fn1={() => console.log('teste')}
+            fn2={() => console.log('teste')} 
+            btn1Class="min-w-[8rem] bg-[#184e7e] dark:text-white" 
+            btn2Class="min-w-[8rem] bg-[#184e7e] dark:text-white" 
+          />
+
       </GlassCard>        
     </ContainerPage>
   );
