@@ -1,10 +1,9 @@
-import React, {ReactNode} from 'react'
+import React, { ReactNode } from 'react'
 
 interface ContainerPageProps {
   children: ReactNode;
   className?: string;
 }
-
 
 const ContainerPage: React.FC<ContainerPageProps> = ({children, className}) => {
   return (
@@ -14,4 +13,4 @@ const ContainerPage: React.FC<ContainerPageProps> = ({children, className}) => {
   )
 }
 
-export default ContainerPage
+export default ContainerPage;

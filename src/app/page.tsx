@@ -1,8 +1,6 @@
 "use client";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
-import { useDispatch } from 'react-redux';
-import { Button } from "@/components/ui/button"
 import GlassCard from "@/components/cards/GlassCard";
 import ContainerPage from "@/components/containers/ContainerPage";
 import LoginButtons from "@/components/buttons/loginButtons";
@@ -31,32 +29,14 @@ const Home = () => {
         contentClass="font-bold"
         footerClass="font-weight-500 text-primary"           
       >
-          {/* <div className="flex!important w-full justify-evenly!impotant">
-            <Button
-              variant="outline"
-              className="px-4 py-2 text-white bg-[#2c7aaf] rounded-md min-w-40"
-            >
-              Signin
-            </Button>
-            <Button 
-              variant="outline"
-              className="px-4 py-2 text-white bg-[#2c7aaf] rounded-md min-w-40"
-            >
-              Register
-            </Button>
-          </div> */}
-          <LoginButtons
-            btn1="Login"
-            btn2="Register"
-            fn1={() => console.log('teste')}
-            fn2={() => console.log('teste')} 
-            introText="" 
-            btn1Class="min-w-[8rem] bg-[#184e7e] dark:text-white" 
-            btn2Class="min-w-[8rem] bg-[#184e7e] dark:text-white" 
-            // containerClass=""
-            // actionsContainerClass="" 
-            // introClass=""
-          />
+        <LoginButtons
+          btn1="Login"
+          btn2="Register"
+          fn1={() => console.log('teste')}
+          fn2={() => console.log('teste')} 
+          btn1Class="min-w-[8rem] bg-[#184e7e] dark:text-white" 
+          btn2Class="min-w-[8rem] bg-[#184e7e] dark:text-white" 
+        />
       </GlassCard>        
     </ContainerPage>
   );
