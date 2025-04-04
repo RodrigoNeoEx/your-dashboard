@@ -10,50 +10,50 @@ import {
 } from "@/components/ui/dialog"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { setupModalFromTypes } from "@/utils/setupModalFromTypes"
+import DefaultBtn from "../buttons/DefaultBtn";
+import  { setupModalFromTypes }  from "@/utils/setupModalFromTypes"
 
 interface DefaultModalProps {
   modalType: string | null;
   onClose: () => void;
+  description: string;
 }
 
+const DefaultModal: React.FC<DefaultModalProps> = ({modalType, onClose}) =>   {
 
-const DefaultModal = ({modalType, onClose}) =>   {
-  // console.log(setupModalFromTypes(modalType))
+  const modal = modalType ? setupModalFromTypes(modalType) : null;
+
+  if (!modal) {
+    return null;
+  }
 
   return (
-    <Dialog open={!!modalType} onOpenChange={(open) => !open && onClose()}>
-      <DialogContent className="sm:max-w-[425px]">
+    <Dialog open={!!modalType} onOpenChange={(open) => !open && onClose()} >
+      <DialogContent className={`bg-[#c7dbec] sm:max-w-[425px]`}>
         <DialogHeader>
-          <DialogTitle>Edit {modalType}</DialogTitle>
+          <DialogTitle>{modal.title}</DialogTitle>
           <DialogDescription>
-            Make changes to your profile here. Click save when you're done.
+            {modal.description}
           </DialogDescription>
         </DialogHeader>
         <div className="grid gap-4 py-4">
-          <div className="grid grid-cols-4 items-center gap-4">
-            <Label htmlFor="name" className="text-right">
-              Name
-            </Label>
-            <Input
-              id="name"
-              defaultValue="Pedro Duarte"
-              className="col-span-3"
-            />
-          </div>
-          <div className="grid grid-cols-4 items-center gap-4">
-            <Label htmlFor="username" className="text-right">
-              Username
-            </Label>
-            <Input
-              id="username"
-              defaultValue="@peduarte"
-              className="col-span-3"
-            />
-          </div>
+          {modal.fields.map((field, index) => {
+            return (
+              <div key={index} className="grid grid-cols-4 items-center gap-4">
+                <Label htmlFor={field.label} className={`text-right ${field.classname}`}>{field.label}</Label>
+                <Input
+                  id={field.label}
+                  type={field.type}
+                  placeholder={field.placeholder}
+                  required={field.required} 
+                  className="col-span-3"             
+                />
+              </div>              
+            )})
+          }          
         </div>
-        <DialogFooter>
-          <Button type="submit">Save changes</Button>
+        <DialogFooter className="gap-0">
+          {modal.footer?.html}          
         </DialogFooter>
       </DialogContent>
     </Dialog>

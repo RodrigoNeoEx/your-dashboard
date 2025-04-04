@@ -6,8 +6,6 @@ import DefaultModal from "../modals/DefaultModal"
 
 
 interface LoginButtonsProps {
-  fn1: () => void
-  fn2: () => void
   btn1: string
   btn2: string
   btn1Class?: string
@@ -16,7 +14,7 @@ interface LoginButtonsProps {
 }
 
 const LoginButtons: React.FC<LoginButtonsProps> = ({ 
-  fn1, fn2, btn1, btn2, 
+  btn1, btn2, 
   btn1Class = "",
   btn2Class = "",
   containerClass= "",
@@ -27,14 +25,14 @@ const LoginButtons: React.FC<LoginButtonsProps> = ({
   return (
     <section className={`flex w-full pt-2 justify-evenly ${containerClass}`}>
         <Button
-          onClick={() => openModal("login")}
-          className="min-w-[8rem] bg-[#184e7e] dark:text-white"
+          onClick={() => openModal(btn1)}
+          className={`${btn1Class}`}
         >
-          <span className="ml-2">Login</span>
+          <span className="ml-2">{btn1}</span>
           {setSVG(btn1)}
         </Button>
-      { btn1 !== "Go to Your Dashboard" &&
-        <Button onClick={fn2} className={`${btn2Class}`}>
+      { btn1 !== "Go to Your Dashboard"  &&
+        <Button onClick={() => openModal(btn2)} className={`${btn2Class}`}>
           <span className="ml-2">{btn2}</span>
           {setSVG(btn2)}
         </Button>
