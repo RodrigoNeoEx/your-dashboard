@@ -1,4 +1,5 @@
 import DefaultBtn from "@/components/buttons/DefaultBtn";
+import { useModal } from "@/context/modals/ModalsProvider";
 import React, { useMemo } from "react";
 
 interface Field {
@@ -21,6 +22,8 @@ interface ModalContent {
 }
 
 export function setupModalFromTypes(modalType: string): ModalContent | null {
+
+  const { modalName, openModal } = useModal();
   
   const modalContent = useMemo(() => {
     switch (modalType) {
@@ -87,7 +90,7 @@ export function setupModalFromTypes(modalType: string): ModalContent | null {
               <DefaultBtn
                 classname="underline border-0 bg-transparent" 
                 variant="link" 
-                fn={() => console.log('teste')}
+                fn={() => openModal('Register')}
                 text={"Não tem uma conta? Cadastre-se!"}
                 />
                 <DefaultBtn type="submit" text="Login" fn={() => console.log('teste')}/>
