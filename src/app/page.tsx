@@ -1,15 +1,10 @@
 "use client";
-import { useRouter } from "next/navigation";
 import Image from "next/image";
 import GlassCard from "@/components/cards/GlassCard";
 import ContainerPage from "@/components/containers/ContainerPage";
 import LoginButtons from "@/components/buttons/loginButtons";
-import DefaultModal from "@/components/modals/DefaultModal";
-
-
 
 const Home = () => {
-  const router = useRouter();
 
   return (
     <ContainerPage className="grid sm:grid-cols-2 grid-cols-1 items-start justify-items-center pt-20 bg-[image:var(--color-background-grad)] relative z-0">
@@ -36,8 +31,7 @@ const Home = () => {
           btn1Class="min-w-[8rem] bg-[#bad8f1] text-[#184e7e] border-[#184e7e] border-2 dark:text-white dark:bg-[#184e7e]" 
           btn2Class="min-w-[8rem] bg-[#bad8f1] text-[#184e7e] border-[#184e7e] border-2 dark:text-white dark:bg-[#184e7e]" 
         />
-      </GlassCard> 
-             
+      </GlassCard>              
     </ContainerPage>
   );
 }
