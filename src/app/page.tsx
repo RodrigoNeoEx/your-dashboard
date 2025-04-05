@@ -3,6 +3,7 @@ import Image from "next/image";
 import GlassCard from "@/components/cards/GlassCard";
 import ContainerPage from "@/components/containers/ContainerPage";
 import LoginButtons from "@/components/buttons/loginButtons";
+import { ModalProvider } from "@/context/modals/ModalsProvider";
 
 const Home = () => {
 
@@ -25,12 +26,14 @@ const Home = () => {
         contentClass="font-bold"
         footerClass="font-weight-500 text-primary"           
       >
-        <LoginButtons
-          btn1="Login"
-          btn2="Register"
-          btn1Class="min-w-[8rem] bg-[#bad8f1] text-[#184e7e] border-[#184e7e] border-2 dark:text-white dark:bg-[#184e7e]" 
-          btn2Class="min-w-[8rem] bg-[#bad8f1] text-[#184e7e] border-[#184e7e] border-2 dark:text-white dark:bg-[#184e7e]" 
-        />
+        <ModalProvider>
+          <LoginButtons
+            btn1="Login"
+            btn2="Register"
+            btn1Class="min-w-[8rem] bg-[#bad8f1] text-[#184e7e] border-[#184e7e] border-2 dark:text-white dark:bg-[#184e7e]" 
+            btn2Class="min-w-[8rem] bg-[#bad8f1] text-[#184e7e] border-[#184e7e] border-2 dark:text-white dark:bg-[#184e7e]" 
+          />
+        </ModalProvider>
       </GlassCard>              
     </ContainerPage>
   );

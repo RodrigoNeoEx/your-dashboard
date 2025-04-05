@@ -1,8 +1,8 @@
 import { Button } from "@/components/ui/button"
 import { setSVG } from "@/utils/setSVG"
-import { useModal } from "@/utils/useModals"
 import React from "react"
 import DefaultModal from "../modals/DefaultModal"
+import { useModal } from "@/context/modals/ModalsProvider"
 
 
 interface LoginButtonsProps {
