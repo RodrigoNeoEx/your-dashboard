@@ -6,7 +6,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
-import React, { ReactNode } from "react";
+import React from "react";
 
 interface GlassCardProps {
   title?: string;
