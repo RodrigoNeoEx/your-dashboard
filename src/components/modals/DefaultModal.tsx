@@ -8,7 +8,6 @@ import {
 } from "@/components/ui/dialog"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-
 import  { setupModalFromTypes }  from "@/utils/setupModalFromTypes"
 
 interface DefaultModalProps {
@@ -26,7 +25,7 @@ const DefaultModal: React.FC<DefaultModalProps> = ({modalType, onClose}) =>   {
 
   return (
     <Dialog open={!!modalType} onOpenChange={(open) => !open && onClose()} >
-      <DialogContent className={`bg-[#c7dbec] sm:max-w-[425px]`}>
+      <DialogContent className={`bg-[#c7dbec] sm:max-w-[425px] dark:bg-[#0e1c27]`}>
         <DialogHeader>
           <DialogTitle>{modal.title}</DialogTitle>
           <DialogDescription>
@@ -37,7 +36,7 @@ const DefaultModal: React.FC<DefaultModalProps> = ({modalType, onClose}) =>   {
           {modal.fields.map((field, index) => {
             return (
               <div key={index} className="grid grid-cols-4 items-center gap-4">
-                <Label htmlFor={field.label} className={`text-right ${field.classname}`}>{field.label}</Label>
+                <Label htmlFor={field.label} className={`text-center ${field.classname}`}>{field.label}</Label>
                 <Input
                   id={field.label}
                   type={field.type}
@@ -51,7 +50,7 @@ const DefaultModal: React.FC<DefaultModalProps> = ({modalType, onClose}) =>   {
         </div>
         <DialogFooter className="gap-0">
           {modal.footer?.html}          
-        </DialogFooter>
+        </DialogFooter>      
       </DialogContent>
     </Dialog>
   )

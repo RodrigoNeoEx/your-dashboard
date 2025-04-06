@@ -23,7 +23,7 @@ interface ModalContent {
 
 export function setupModalFromTypes(modalType: string): ModalContent | null {
 
-  const { modalName, openModal } = useModal();
+  const { switchModal } = useModal();
   
   const modalContent = useMemo(() => {
     switch (modalType) {
@@ -45,10 +45,10 @@ export function setupModalFromTypes(modalType: string): ModalContent | null {
               placeholder: "Digite sua senha",
               required: true,
             },{
-              label: "Confirme sua senha",
+              label: "Confirme a senha",
               classname: "text-center",
               type: "password",
-              placeholder: "Confirme sua senha",
+              placeholder: "Confirme a senha",
               required: true,
             },
           ],          
@@ -82,19 +82,75 @@ export function setupModalFromTypes(modalType: string): ModalContent | null {
             html:
             <React.Fragment> 
               <DefaultBtn
-              classname="underline border-0 bg-transparent" 
+              classname="underline border-0 !bg-transparent" 
               variant="link" 
-              fn={() => console.log('teste')}
+              fn={() => switchModal('ForgotPassword')}
               text={"Esqueci minha senha"}
               />
               <DefaultBtn
-                classname="underline border-0 bg-transparent" 
+                classname="underline border-0 !bg-transparent" 
                 variant="link" 
-                fn={() => openModal('Register')}
+                fn={() => switchModal('Register')}
                 text={"Não tem uma conta? Cadastre-se!"}
                 />
                 <DefaultBtn type="submit" text="Login" fn={() => console.log('teste')}/>
               </React.Fragment>,
+          },
+        };
+      case "ForgotPassword":
+        return {
+          title: "Recuperar Senha",
+          description: "Digite seu e-mail para recuperar sua senha.",
+          fields: [
+            {
+              label: "Email",
+              type: "email",
+              placeholder: "Digite seu email",
+              required: true,
+            },
+          ],
+          footer: {
+            html: (
+              <DefaultBtn
+                type="submit"
+                text="Recuperar Senha"
+                fn={() => switchModal('ChangePassword')}
+              />
+            ),
+          },
+        };
+      case "ChangePassword":
+        return {
+          title: "Alterar Senha",
+          description: "Digite o codigo enviado e a nova senha.",
+          fields: [
+            {
+              label: "Código",
+              type: "password",
+              placeholder: "Seu código",
+              required: true,
+            },
+            {
+              label: "Nova Senha",
+              type: "password",
+              placeholder: "Digite sua nova senha",
+              required: true,
+            },
+            {
+              label: "Confirme a senha",
+              type: "password",
+              placeholder: "Digite sua nova senha",
+              required: true,
+            },
+          ],
+          footer: {
+            html: (
+              <DefaultBtn
+                type="submit"
+                text="Alterar Senha"
+                fn={() => console.log('teste')}
+              />
+            ),
           },
         };
       default:
