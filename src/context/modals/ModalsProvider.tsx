@@ -4,6 +4,8 @@ interface ModalContextData {
   modalName: string;
   openModal: (name: string) => void;
   closeModal: () => void;
+  switchModal: (name: string) => void;
+  setModalName: (name: string) => void;
 }
 
 const ModalContext = createContext<ModalContextData | undefined>(undefined);
@@ -23,8 +25,16 @@ export const ModalProvider: React.FC<ModalProviderProps> = ({ children }) => {
     setModalName("");
   };
 
+  const switchModal = (name: string) => {
+ 
+    closeModal();  
+    setTimeout(() => {
+      openModal(name);
+    }, 150);  
+  };
+
   return (
-    <ModalContext.Provider value={{ modalName, openModal, closeModal }}>
+    <ModalContext.Provider value={{ modalName, openModal, closeModal, switchModal, setModalName }}>
       {children}
     </ModalContext.Provider>
   );
