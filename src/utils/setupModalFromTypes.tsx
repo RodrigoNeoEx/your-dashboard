@@ -1,6 +1,7 @@
 import DefaultBtn from "@/components/buttons/DefaultBtn";
 import { useModal } from "@/context/modals/ModalsProvider";
 import React, { useMemo } from "react";
+import { setSVG } from "@/utils/setSVG"
 
 interface Field {
   label: string;
@@ -58,7 +59,10 @@ export function setupModalFromTypes(modalType: string): ModalContent | null {
               fn={() => console.log('teste')}
               type="submit"
               text={"Efetuar Cadastro"}
-              />,
+              classname="hover:text-white "
+            >
+              {setSVG("Register")}
+            </DefaultBtn>,
           },
         };
       case "Login":
@@ -81,19 +85,26 @@ export function setupModalFromTypes(modalType: string): ModalContent | null {
           footer: {
             html:
             <React.Fragment> 
+              <DefaultBtn 
+                type="submit"
+                classname="hover:text-white w-full" 
+                text="Login" 
+                fn={() => console.log('teste')}
+              >
+                {setSVG("Login")}
+              </DefaultBtn>
               <DefaultBtn
-              classname="underline border-0 !bg-transparent" 
+              classname="underline border-0 !bg-transparent hover:text-blue-400 sm:text-sm"  
               variant="link" 
               fn={() => switchModal('ForgotPassword')}
               text={"Esqueci minha senha"}
               />
               <DefaultBtn
-                classname="underline border-0 !bg-transparent" 
+                classname="underline border-0 !bg-transparent hover:text-blue-400 sm:text-sm" 
                 variant="link" 
                 fn={() => switchModal('Register')}
                 text={"Não tem uma conta? Cadastre-se!"}
                 />
-                <DefaultBtn type="submit" text="Login" fn={() => console.log('teste')}/>
               </React.Fragment>,
           },
         };
@@ -115,7 +126,10 @@ export function setupModalFromTypes(modalType: string): ModalContent | null {
                 type="submit"
                 text="Recuperar Senha"
                 fn={() => switchModal('ChangePassword')}
-              />
+                classname="hover:text-white "
+                >
+                {setSVG("ChangePassword")}
+              </DefaultBtn>
             ),
           },
         };
@@ -149,7 +163,10 @@ export function setupModalFromTypes(modalType: string): ModalContent | null {
                 type="submit"
                 text="Alterar Senha"
                 fn={() => console.log('teste')}
-              />
+                classname="hover:text-white "
+              >
+                {setSVG("RecoverPassword")}
+              </DefaultBtn>
             ),
           },
         };
