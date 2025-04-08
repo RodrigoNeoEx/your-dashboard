@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button"
 import { setSVG } from "@/utils/setSVG"
 import React from "react"
 import DefaultModal from "../modals/DefaultModal"
-import { useModal } from "@/context/modals/ModalsProvider"
+import { useModalContext } from "@/context/modals/ModalsProvider"
 
 
 interface LoginButtonsProps {
@@ -18,7 +18,7 @@ const LoginButtons: React.FC<LoginButtonsProps> = ({
   containerClass= "",
 }) => {
 
-  const { modalName, openModal, closeModal } = useModal();
+  const { modalName, openModal, closeModal } = useModalContext();
 
   return (
     <section className={`flex w-full pt-2 justify-evenly ${containerClass}`}>

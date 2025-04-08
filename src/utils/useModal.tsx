@@ -1,5 +1,5 @@
 import DefaultBtn from "@/components/buttons/DefaultBtn";
-import { useModal } from "@/context/modals/ModalsProvider";
+import { useModalContext } from "@/context/modals/ModalsProvider";
 import React, { useMemo } from "react";
 import { setSVG } from "@/utils/setSVG"
 
@@ -22,9 +22,9 @@ interface ModalContent {
   footer?: Footer;
 }
 
-export function setupModalFromTypes(modalType: string): ModalContent | null {
+export function useModal(modalType: string): ModalContent | null {
 
-  const { switchModal } = useModal();
+  const { switchModal } = useModalContext();
   
   const modalContent = useMemo(() => {
     switch (modalType) {
@@ -173,7 +173,7 @@ export function setupModalFromTypes(modalType: string): ModalContent | null {
       default:
         return null;
     }
-  }, [modalType]);
+  }, [modalType, switchModal]);
 
   return modalContent;
 }

@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/dialog"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import  { setupModalFromTypes }  from "@/utils/setupModalFromTypes"
+import  { useModal }  from "@/utils/useModal"
 
 interface DefaultModalProps {
   modalType: string | null;
@@ -17,7 +17,7 @@ interface DefaultModalProps {
 
 const DefaultModal: React.FC<DefaultModalProps> = ({modalType, onClose}) =>   {
 
-  const modal = modalType ? setupModalFromTypes(modalType) : null;
+  const modal = useModal(modalType || "")
 
   if (!modal) {
     return null;
@@ -25,7 +25,7 @@ const DefaultModal: React.FC<DefaultModalProps> = ({modalType, onClose}) =>   {
 
   return (
     <Dialog open={!!modalType} onOpenChange={(open) => !open && onClose()} >
-      <DialogContent className={`bg-[#c7dbec] max-w-[425px] sm:min-w-[30%] dark:bg-[#0e1c27] justify-evenly last:!text-[50rem]`}>
+      <DialogContent className={`bg-[#c7dbec] max-w-[425px] sm:min-w-[30%] dark:bg-[#0e1c27] justify-evenly last:`}>
         <DialogHeader>
           <DialogTitle className="sm:text-3xl sm:text-center">{modal.title}</DialogTitle>
           <DialogDescription className="sm:text-3xl sm:text-center">
