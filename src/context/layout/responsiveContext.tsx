@@ -3,7 +3,7 @@
 import { useTheme } from "next-themes";
 import { createContext, useContext, useEffect, useMemo, useState } from "react";
 
-type Breakpoint = "xs" | "sm" | "md" | "lg" | "xl";
+type Breakpoint = "xs" | "sm" | "md" | "lg" | "xl" | "xxl";
 
 type ResponsiveContextType = {
   theme: string | undefined;
@@ -16,6 +16,7 @@ type ResponsiveContextType = {
 const ResponsiveContext = createContext<ResponsiveContextType | null>(null);
 
 const getBreakpoint = (width: number): Breakpoint => {
+  if (width >= 1600) return "xxl";
   if (width >= 1280) return "xl";
   if (width >= 1024) return "lg";
   if (width >= 768) return "md";
@@ -38,7 +39,7 @@ export function ResponsiveContextProvider({ children }: { children: React.ReactN
     breakpoint,
     isMobile: ["xs", "sm"].includes(breakpoint),
     isTablet: breakpoint === "md",
-    isDesktop: ["lg", "xl"].includes(breakpoint),
+    isDesktop: ["lg", "xl", "xxl"].includes(breakpoint),
   }), [resolvedTheme, breakpoint]);
 
   return (

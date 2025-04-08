@@ -8,15 +8,13 @@ import { useModal } from "@/context/modals/ModalsProvider"
 interface LoginButtonsProps {
   btn1: string
   btn2: string
-  btn1Class?: string
-  btn2Class?: string
+  btnClass?: string
   containerClass?: string
 }
 
 const LoginButtons: React.FC<LoginButtonsProps> = ({ 
   btn1, btn2, 
-  btn1Class = "",
-  btn2Class = "",
+  btnClass = "",
   containerClass= "",
 }) => {
 
@@ -26,13 +24,13 @@ const LoginButtons: React.FC<LoginButtonsProps> = ({
     <section className={`flex w-full pt-2 justify-evenly ${containerClass}`}>
         <Button
           onClick={() => openModal(btn1)}
-          className={`${btn1Class}`}
+          className={`${btnClass}`}
         >
           <span className="ml-2">{btn1}</span>
           {setSVG(btn1)}
         </Button>
       { btn1 !== "Go to Your Dashboard"  &&
-        <Button onClick={() => openModal(btn2)} className={`${btn2Class}`}>
+        <Button onClick={() => openModal(btn2)} className={`${btnClass}`}>
           <span className="ml-2">{btn2}</span>
           {setSVG(btn2)}
         </Button>
