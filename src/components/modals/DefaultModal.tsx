@@ -38,7 +38,7 @@ const DefaultModal: React.FC<DefaultModalProps> = ({modalType, onClose}) =>   {
           {modal.fields.map((field, index) => {
             return (
               <div key={index} className="grid grid-cols-4 items-center gap-4 sm:w-md md:w-auto md:justify-items-center">
-                <Label htmlFor={field.label} className={`text-center sm:text-justify sm:text-2xl ${field.classname}`}>{field.label}</Label>
+                <Label htmlFor={field.label} className={`text-center sm:text-2xl ${field.classname}`}>{field.label}</Label>
                 <Input
                   id={field.label}
                   type={field.type}

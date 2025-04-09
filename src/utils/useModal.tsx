@@ -153,7 +153,7 @@ export function useModal(modalType: string): ModalContent | null {
             {
               label: "Confirme a senha",
               type: "password",
-              placeholder: "Digite sua nova senha",
+              placeholder: "Confirme sua nova senha",
               required: true,
             },
           ],
