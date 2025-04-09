@@ -25,7 +25,9 @@ const DefaultModal: React.FC<DefaultModalProps> = ({modalType, onClose}) =>   {
 
   return (
     <Dialog open={!!modalType} onOpenChange={(open) => !open && onClose()} >
-      <DialogContent className={`bg-[#c7dbec] max-w-[425px] sm:min-w-[30%] dark:bg-[#0e1c27] justify-evenly last:`}>
+      <DialogContent className={`bg-[#c7dbec] max-w-[425px] sm:min-w-[30%] dark:bg-[#0e1c27] justify-evenly sm:[&>:last-child>svg]:w-[35px] sm:[&>:last-child>svg]:h-[35px] 
+        sm:[&>:last-child>svg]:border-5 [&>:last-child>svg]:border-solid [&>:last-child>svg]:rounded-[10px] [&>:last-child>svg]:!border-t-transparent [&>:last-child>svg]:!border-r-transparent
+        [&>:last-child>svg]:border-[#0060d136] dark:[&>:last-child>svg]:border-[#ffffff8c] `}>
         <DialogHeader>
           <DialogTitle className="sm:text-3xl sm:text-center">{modal.title}</DialogTitle>
           <DialogDescription className="sm:text-3xl sm:text-center">
