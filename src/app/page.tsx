@@ -28,7 +28,7 @@ const Home = () => {
       >
         <ModalProvider>
           <LoginButtons
-            btn1="Login"
+            btn1="Go to your Dashboard"
             btn2="Register"
             btnClass="min-w-[40%] h-auto sm:text-[1.25rem] 2xl:text-[1.75rem] bg-[#bad8f1] text-[#184e7e] border-[#184e7e] border-2 dark:text-white dark:bg-[#184e7e] hover:text-white "
           />
