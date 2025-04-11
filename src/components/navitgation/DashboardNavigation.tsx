@@ -2,9 +2,8 @@
 
 import * as React from "react"
 import Link from "next/link"
-
 import { cn } from "@/lib/utils"
-// import { Icons } from "@/components/icons"
+
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -21,8 +20,10 @@ export function DashboardNavigation() {
     <NavigationMenu>      
       <NavigationMenuList>
         <NavigationMenuItem>
-          <NavigationMenuTrigger>Choose Your Dashboard</NavigationMenuTrigger>
-          <NavigationMenuContent className="max-h-[80vh] overflow-y-auto">
+          <NavigationMenuTrigger>
+            Choose Your Dashboard
+          </NavigationMenuTrigger>
+          <NavigationMenuContent className="max-h-[80vh] overflow-y-auto bg-blue-100 dark:bg-[#184e7e]">
             <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] ">              
               <ListItem href="/docs" title="Introduction">
                 Re-usable components built using Radix UI and Tailwind CSS.
@@ -38,53 +39,19 @@ export function DashboardNavigation() {
               </ListItem>
               <ListItem href="/docs/installation" title="Installation">
                 How to install dependencies and structure your app.
-              </ListItem>
-              <ListItem href="/docs/primitives/typography" title="Typography">
-                Styles for headings, paragraphs, lists...etc
-              </ListItem>
-              <ListItem href="/docs" title="Introduction">
-                Re-usable components built using Radix UI and Tailwind CSS.
-              </ListItem>
-              <ListItem href="/docs/installation" title="Installation">
-                How to install dependencies and structure your app.
-              </ListItem>
-              <ListItem href="/docs/primitives/typography" title="Typography">
-                Styles for headings, paragraphs, lists...etc
-              </ListItem>
-              <ListItem href="/docs" title="Introduction">
-                Re-usable components built using Radix UI and Tailwind CSS.
-              </ListItem>
-              <ListItem href="/docs/installation" title="Installation">
-                How to install dependencies and structure your app.
-              </ListItem>
-              <ListItem href="/docs/primitives/typography" title="Typography">
-                Styles for headings, paragraphs, lists...etc
-              </ListItem>
-              <ListItem href="/docs" title="Introduction">
-                Re-usable components built using Radix UI and Tailwind CSS.
-              </ListItem>
-              <ListItem href="/docs/installation" title="Installation">
-                How to install dependencies and structure your app.
-              </ListItem>
-              <ListItem href="/docs/primitives/typography" title="Typography">
-                Styles for headings, paragraphs, lists...etc
-              </ListItem>
-              <ListItem href="/docs" title="Introduction">
-                Re-usable components built using Radix UI and Tailwind CSS.
-              </ListItem>
-              <ListItem href="/docs/installation" title="Installation">
-                How to install dependencies and structure your app.
-              </ListItem>
-              <ListItem href="/docs/primitives/typography" title="Typography">
-                Styles for headings, paragraphs, lists...etc
-              </ListItem>
+              </ListItem>              
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>       
         <NavigationMenuItem>
-          <Link href="/create" legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()} title="Create">
-              <p className="flex items-center justify-around min-w-[10rem]">
+          <Link 
+            href="/create"
+            legacyBehavior
+            passHref
+            
+          >
+            <NavigationMenuLink className={navigationMenuTriggerStyle()} title="Create" >
+              <p className="flex items-center justify-around min-w-[10rem] [&>:last-child>svg]:!text-[#184e7e]">
                 Create a new one
                 {setSVG("Create")}                
               </p>

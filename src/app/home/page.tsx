@@ -9,10 +9,9 @@ const Home = () => {
     <ContainerPage className="bg-[image:var(--color-background-grad)]">
       <Header classname="relative"/>
     
-      <ContainerContent classname="flex flex-col items-center justify-center w-full h-auto">    
-      <h1>Choose your Dashboard or Create a new one</h1>
+      <ContainerContent classname="flex flex-col items-center justify-center w-full h-auto mt-2">    
+        <h1>Choose your Dashboard or Create a new one</h1>
         <DashboardNavigation />
-
       </ContainerContent>
     </ContainerPage>
   )
