@@ -8,7 +8,7 @@ import { ModalProvider } from "@/context/modals/ModalsProvider";
 const Home = () => {
 
   return (
-    <ContainerPage className="grid lg:grid-cols-2 grid-cols-1 items-start 2xl:items-center justify-items-center pt-20 bg-[image:var(--color-background-grad)] relative z-0">
+    <ContainerPage className="grid 2xl:grid-cols-2 grid-cols-1 items-start 2xl:items-center justify-items-center pt-20 bg-[image:var(--color-background-grad)] relative z-0">
       <Image
         src="/bgVetorizado2.png"
         alt="Background"
@@ -21,9 +21,9 @@ const Home = () => {
         title="Welcome to Your Dashboard Creator" 
         content="Build, customize, and organize your dashboards and KPIs however you want. Choose layouts, define metrics, and create different views for each objective — all in one place." 
         footer="Signin or Register to Start to Use."
-        cardClass="max-w-[90%] dark:bg-[#184e7e40] bg-[#bad8f16e] 2xl:max-w-[60%] lg:flex lg:justify-around h-auto lg:min-h-[50vh]"
-        titleClass=" md:text-[1.75rem] lg:text-[2.25rem] 2xl:text-[2.75rem]"
-        contentClass="font-bold md:text-center md:text-[1.75rem] lg:text-[2.25rem/normal] lg:font-normal 2xl:text-[2.75rem/normal]"
+        cardClass="max-w-[90%] dark:bg-[#184e7e40] bg-[#bad8f16e] lg:max-w-[80%] lg:flex lg:justify-around h-auto 2xl:min-h-[50vh] 2xl:max-w-[70%] 2xl:relative 2xl:bottom-[10%]"
+        titleClass=" md:text-[1.75rem] lg:text-[2rem] 2xl:text-[2.5rem]"
+        contentClass="font-bold md:text-center md:text-[1.5rem] md:leading-[2rem] 2xl:text-[1.75rem] 2xl:font-normal"
         footerClass="font-weight-500 text-primary md:text-[1.5rem]"           
       >
         <ModalProvider>
