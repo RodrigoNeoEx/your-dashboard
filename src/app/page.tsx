@@ -14,16 +14,16 @@ const Home = () => {
   return (
     <React.Fragment>
       <Suspense fallback={null}>
-        <Header />
+        <Header classname="bg-[image:var(--color-background-grad)]"/>
       </Suspense>
-      <ContainerPage className="grid 2xl:grid-cols-2 grid-cols-1 items-start 2xl:items-center justify-items-center pt-20 bg-[image:var(--color-background-grad)] relative z-0">
+      <ContainerPage className="grid 2xl:grid-cols-2 grid-cols-1 items-start 2xl:items-center justify-items-center pt-20 bg-[image:var(--color-background-grad)] relative z-0 max-h-screen">
         <Image
           src="/bgVetorizado2.png"
           alt="Background"
           fill
           priority
           loading="eager"  
-          className="sm:object-contain absolute h-screen w-full object-cover object-[40%] xl:object-[85%] " 
+          className="sm:object-contain absolute h-screen w-full object-cover object-[40%] xl:object-[85%] md:!top-[4rem]" 
         />  
         <GlassCard 
           title="Welcome to Your Dashboard Creator" 
