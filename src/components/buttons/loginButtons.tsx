@@ -3,6 +3,7 @@ import { setSVG } from "@/utils/setSVG"
 import React from "react"
 import DefaultModal from "../modals/DefaultModal"
 import { useModalContext } from "@/context/modals/ModalsProvider"
+import { useRouter } from "next/navigation"
 
 
 interface LoginButtonsProps {
@@ -19,17 +20,23 @@ const LoginButtons: React.FC<LoginButtonsProps> = ({
 }) => {
 
   const { modalName, openModal, closeModal } = useModalContext();
+  const router = useRouter();
+
+  const handleFn = (btn1: string) => {
+    btn1 === "Go to your Dashboard" ?
+    router.push('/home') : openModal("register")
+  }
 
   return (
     <section className={`flex w-full pt-2 justify-evenly ${containerClass}`}>
         <Button
-          onClick={() => openModal(btn1)}
+          onClick={() => handleFn(btn1)}
           className={`${btnClass}`}
         >
           <span className="ml-2">{btn1}</span>
           {setSVG(btn1)}
         </Button>
-      { btn1 !== "Go to Your Dashboard"  &&
+      { btn1 !== "Go to your Dashboard"  &&
         <Button onClick={() => openModal(btn2)} className={`${btnClass}`}>
           <span className="ml-2">{btn2}</span>
           {setSVG(btn2)}
