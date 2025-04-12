@@ -23,13 +23,10 @@ const LoginButtons: React.FC<LoginButtonsProps> = ({
   const router = useRouter();
 
   const handleFn = (btn1: string) => {
-    if (btn1 === "Go to your Dashboard") {
-      router.push('/home');
-    } else {
-      openModal("register");
-    }
-  }
-
+    void (btn1 === "Go to your Dashboard" ? router.push('/home') : openModal("register"));
+  };
+  
+  
   return (
     <section className={`flex w-full pt-2 justify-evenly ${containerClass}`}>
         <Button
