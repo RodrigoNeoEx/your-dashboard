@@ -23,8 +23,11 @@ const LoginButtons: React.FC<LoginButtonsProps> = ({
   const router = useRouter();
 
   const handleFn = (btn1: string) => {
-    btn1 === "Go to your Dashboard" ?
-    router.push('/home') : openModal("register")
+    if (btn1 === "Go to your Dashboard") {
+      router.push('/home');
+    } else {
+      openModal("register");
+    }
   }
 
   return (
