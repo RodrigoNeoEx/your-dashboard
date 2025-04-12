@@ -44,12 +44,7 @@ export function DashboardNavigation() {
           </NavigationMenuContent>
         </NavigationMenuItem>       
         <NavigationMenuItem>
-          <Link 
-            href="/create"
-            legacyBehavior
-            passHref
-            
-          >
+          <Link href="/create" legacyBehavior passHref >
             <NavigationMenuLink className={navigationMenuTriggerStyle()} title="Create" >
               <p className="flex items-center justify-around min-w-[10rem] [&>:last-child>svg]:!text-[#184e7e]">
                 Create a new one
